@@ -1,0 +1,33 @@
+{
+  "name": "react-environment-greenfield",
+  "version": "0.0.1",
+  "description": "HeathWallace Australia setup for greenfield exploration of React and design crossover including style guides and other potential integration points",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --progress --inline",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "https://kolsen@bitbucket.mirum.agency/scm/hwmel/react-environment-greenfield.git",
+  "author": "Keilin Olsen <keilin.olsen@heathwallace.com> (http://heathwallace.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "prop-types": "^15.5.10",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "recompose": "^0.24.0",
+    "styled-components": "^2.1.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-hmre": "^1.1.1",
+    "html-webpack-plugin": "^2.28.0",
+    "path": "^0.12.7",
+    "react-hot-loader": "next",
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.4.5"    
+  }
+}

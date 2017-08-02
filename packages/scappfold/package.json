@@ -1,0 +1,53 @@
+{
+  "name": "scappfold",
+  "version": "0.3.0",
+  "description": "creates a new development environment from a template",
+  "bin": {
+    "scappfold": "./bin/index.js"
+  },
+  "cli": {
+    "main": "src/main"
+  },
+  "preferGlobal": true,
+  "scripts": {
+    "start": "node bin/index",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node tasks/postinstall",
+    "prettier": "prettier --trailing-comma es5 --single-quote --write",
+    "format": "npm run prettier 'bin/*.js' 'src/*.js' 'tasks/*.js'",
+    "precommit": "lint-staged",
+    "init": "node tasks/init"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/pentaphobe/cli-core.git"
+  },
+  "author": "Keilin Olsen (http://github.com/pentaphobe)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pentaphobe/cli-core/issues"
+  },
+  "homepage": "https://github.com/pentaphobe/cli-core#readme",
+  "dependencies": {
+    "app-root-path": "^2.0.1",
+    "chalk": "^2.0.1",
+    "commander": "^2.11.0",
+    "glob": "^7.1.2",
+    "graceful-fs": "^4.1.11",
+    "inquirer": "^3.2.1",
+    "progress": "^2.0.0",
+    "semver": "^5.4.1",
+    "simple-git": "^1.75.0",
+    "validate-npm-package-name": "^3.0.0",
+    "write-json-file": "^2.2.0",
+    "react-app-scaffold-template": "../react-app-scaffold-template"    
+  },
+  "lint-staged": {
+    "*.js": "prettier"
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.2",
+    "prettier": "^1.5.3"
+  }
+}
