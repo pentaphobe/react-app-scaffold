@@ -1,6 +1,6 @@
 {
   "name": "scappfold",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "creates a new development environment from a template",
   "bin": {
     "scappfold": "./bin/index.js"
@@ -8,6 +8,7 @@
   "cli": {
     "main": "src/main"
   },
+  "gitDir": "../",
   "preferGlobal": true,
   "scripts": {
     "start": "node bin/index",

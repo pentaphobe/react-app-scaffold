@@ -1,12 +1,13 @@
 {
   "name": "react-app-scaffold-template",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "minimal template for scappfold development environment",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --progress --inline",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "gitDir": "../",
   "repository": "",
   "author": "Keilin Olsen <keilin.olsen@heathwallace.com> (http://heathwallace.com/)",
   "license": "ISC",
