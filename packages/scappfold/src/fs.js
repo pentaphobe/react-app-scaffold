@@ -14,28 +14,35 @@ const { isDryRun, setDryRun, dryLog } = require('./dryRun');
 let methods = {};
 let methodNames = [
   'readFileSync',
-  'fstatSync',
-  function existsSync(path) {    
+  'statSync',
+  'mkdirSync',
+  function isDirectory(path) {
+    let stats = fs.statSync(path);
+    return stats.isDirectory();
+  },
+  function existsSync(path) {
     // custom handler
-    if (isDryRun()) {
-      dryLog('existsSync', path);
-      return true;
-    }
+    // if (isDryRun()) {
+    //   dryLog('existsSync', path);
+    //   return true;
+    // }
+
+    // this doesn't modify the filesystem, so just use default
     return fs.existsSync(path);
   },
   function writeJsonFile(filename, data) {
     if (isDryRun()) {
       dryLog(`writing JSON file ${filename}`);
       // return an empty promise
-      return new Promise(function (resolve, reject) {
+      return new Promise(function(resolve, reject) {
         resolve('dry run mode');
-      })
+      });
     }
     return realWriteJsonFile(filename, data, {
       // indent using two spaces
-      indent: '  ',    
+      indent: '  ',
     });
-  }
+  },
 ];
 
 /**
@@ -52,18 +59,19 @@ function wrap(funcName, fn, ctx) {
 
     if (isDryRun()) {
       // console.log(chalk.magenta(`dry-run ${funcName}:\n  `), args);
-      dryLog(funcName, args)
+      dryLog(funcName, args);
       return true;
     }
 
     return fn.apply(this, args);
-  }
+  };
 }
 
-methodNames.forEach( name => 
-  typeof name === 'string' 
-    ? methods[name] = wrap(name, fs[name], fs) 
-    : methods[name.name] = name );
+methodNames.forEach(
+  name =>
+    typeof name === 'string'
+      ? (methods[name] = wrap(name, fs[name], fs))
+      : (methods[name.name] = name)
+);
 
 module.exports = methods;
-
