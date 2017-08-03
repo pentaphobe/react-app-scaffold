@@ -1,8 +1,8 @@
 
 const theme = {
-  primary: '#e8e8e8',
-  secondary: '#222',
-  borderRadius: 12
+  base: '#222',
+  primary: '#eee',
+  secondary: '#888'
 };
 
 export default theme;

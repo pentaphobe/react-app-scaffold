@@ -6,48 +6,13 @@ import styled, {
 	} from 'styled-components';
 
 import Button from 'components/Button';
+import Heading from 'components/Heading';
+import Header from 'components/Header';
+import Main from 'components/Main';
+import Screen from 'components/Screen';
+import Input from 'components/form/Input';
 
-const themes = {
-	default: {
-		base: '#e8e8e8',
-		primary: '#222',
-		secondary: '#888'
-	},
-	alternative: {
-		base: '#222',
-		primary: '#eee',
-		secondary: '#888'
-	}
-};
-
-
-const Heading = styled.h1`
-	background: transparent;
-	color: ${ props => props.theme.base };
-	padding: 8px;
-	margin: 0;
-`;
-
-const Header = styled.header`
-	background: ${ props => props.theme.base };
-	color: ${ props => props.theme.primary };
-	min-height: 64px;
-	padding: 8px;
-	margin: 0;
-`;
-
-const Main = styled.main`
-	background: transparent;
-	min-height: 100%;
-	padding: 8px;
-`;
-
-const Screen = styled.div`
-	background: ${ props => props.theme.primary };
-	position: absolute;
-	width: 100%;
-	min-height: 100%;
-`;
+import themes, { utils as theme } from '../theme';
 
 const ExampleBase = (props) => (
 	<Screen>
@@ -55,9 +20,11 @@ const ExampleBase = (props) => (
 		</Header>
 		<Main>
 			<Heading>Theme is {props.themeName}</Heading>
-				{
-					props.state.themeNames.map( (themeName, idx) => (<Button key={idx} onClick={() => props.onThemeChange(themeName)}>{themeName}</Button>) )
-				}
+			{
+				props.state.themeNames.map( (themeName, idx) => (<Button key={idx} onClick={() => props.onThemeChange(themeName)}>{themeName}</Button>) )
+			}
+			<Input id="figgles" label="Test label">
+			</Input>
 			</Main>
 	</Screen>
 );

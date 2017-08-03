@@ -1,13 +1,13 @@
 {
-  "name": "react-environment-greenfield",
+  "name": "react-app-scaffold-template",
   "version": "0.1.1",
-  "description": "HeathWallace Australia setup for greenfield exploration of React and design crossover including style guides and other potential integration points",
+  "description": "minimal template for scappfold development environment",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --progress --inline",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "https://kolsen@bitbucket.mirum.agency/scm/hwmel/react-environment-greenfield.git",
+  "repository": "",
   "author": "Keilin Olsen <keilin.olsen@heathwallace.com> (http://heathwallace.com/)",
   "license": "ISC",
   "dependencies": {
