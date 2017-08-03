@@ -4,8 +4,8 @@
  */
 
 const appRootPath = require('app-root-path'),
-      reqlib = appRootPath.require,
-      rootPath = appRootPath.toString();
+  reqlib = appRootPath.require,
+  rootPath = appRootPath.toString();
 
 const path = require('path');
 
@@ -30,5 +30,5 @@ module.exports = {
   cwdPath,
   scriptRelative,
   cwdRelative,
-  require: reqlib
+  require: reqlib,
 };

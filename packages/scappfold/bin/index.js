@@ -10,7 +10,7 @@
  * - loads up /src/main.js
  * 
  */
-'use strict'
+'use strict';
 
 var path = require('path');
 var chalk = require('chalk');
@@ -18,19 +18,22 @@ var isCompatible = performCompatibilityChecks();
 var warningSymbol = '!'; // '\u26A0';
 
 function performCompatibilityChecks() {
-	var majorNodeVersion = process.versions.node.split(/\./)[0];
+  var majorNodeVersion = process.versions.node.split(/\./)[0];
 
   // likely only need 4+ with --harmony flag
-	if (majorNodeVersion < 6) {
-		return `sorry, we require Node version 6 or higher`;
-	}
+  if (majorNodeVersion < 6) {
+    return `sorry, we require Node version 6 or higher`;
+  }
 
-	return true;
-};
+  return true;
+}
 
 if (isCompatible !== true) {
-	console.error(chalk.red.bold(`\t${warningSymbol}\t`), chalk.red(isCompatible));	
+  console.error(
+    chalk.red.bold(`\t${warningSymbol}\t`),
+    chalk.red(isCompatible)
+  );
 } else {
   var pkg = require('../package.json');
-	module.exports = require(path.join('..', pkg.cli.main));
+  module.exports = require(path.join('..', pkg.cli.main));
 }

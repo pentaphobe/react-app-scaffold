@@ -1,11 +1,10 @@
-
 const paths = require('./paths');
 const simpleGit = require('simple-git')(paths.scriptPath('.'));
-const {isDryRun, dryLog} = require('./dryRun');
+const { isDryRun, dryLog } = require('./dryRun');
 
 function forkUpstreams(newRemote, callback) {
   var promise = new Promise((resolve, reject) => {
-    simpleGit.getRemotes(true, function (err, remotes) {
+    simpleGit.getRemotes(true, function(err, remotes) {
       let origin = remotes.find(rem => rem && rem.name === 'origin');
 
       if (err || !origin) {
@@ -16,13 +15,13 @@ function forkUpstreams(newRemote, callback) {
           dryLog(`set remote: upstream to '${origin.refs.fetch}'`);
           dryLog(`set remote: origin to '${newRemote}'`);
         } else {
-          simpleGit.removeRemote('origin', (err) => {
+          simpleGit.removeRemote('origin', err => {
             simpleGit
               .addRemote('origin', newRemote)
               .addRemote('upstream', origin.refs.fetch);
           });
         }
-        resolve('hello mudda');        
+        resolve('hello mudda');
       }
     });
   });
@@ -31,5 +30,5 @@ function forkUpstreams(newRemote, callback) {
 }
 
 module.exports = {
-  forkUpstreams
+  forkUpstreams,
 };

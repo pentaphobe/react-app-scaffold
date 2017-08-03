@@ -36,45 +36,45 @@ const questions = [
     name: 'name',
     message: 'Project name',
     type: 'input',
-    validate: (name) => validatePackageName(name).validForNewPackages,
-    default: path.basename(paths.scriptPath('.'))    
+    validate: name => validatePackageName(name).validForNewPackages,
+    default: path.basename(paths.scriptPath('.')),
   },
   {
     name: 'description',
     message: 'Description',
     type: 'input',
-    default: pkg.description    
-  },  
+    default: pkg.description,
+  },
   {
     name: 'command',
     message: 'command name (when installed globally)',
     type: 'input',
-    validate: (name) => /[a-z0-9_\-]+/.test(name),
-    default: (answers) => answers.name
+    validate: name => /[a-z0-9_\-]+/.test(name),
+    default: answers => answers.name,
   },
   {
     name: 'version',
     message: 'Version',
     type: 'input',
-    validate: (ver) => semver.valid(ver) === ver,
-    default: pkg.version    
-  },    
+    validate: ver => semver.valid(ver) === ver,
+    default: pkg.version,
+  },
   {
     name: 'entryPoint',
     message: 'Main script',
     type: 'input',
-    default: pkg.cli.main
+    default: pkg.cli.main,
   },
   {
     name: 'repository',
     message: 'Repository location (cli-core will remain as upstream)',
     type: 'input',
     // TODO: actual repo URL validation
-    validate: (name) => /^(github|git|git\+ssh|http|https)\:\/\//.test(name),
-    default: (answers) => `git+ssh://git@github.com/pentaphobe/${answers.name}.git`
-  }
+    validate: name => /^(github|git|git\+ssh|http|https)\:\/\//.test(name),
+    default: answers =>
+      `git+ssh://git@github.com/pentaphobe/${answers.name}.git`,
+  },
 ];
-
 
 /**
  * 
@@ -86,12 +86,17 @@ var prompt = inquirer.createPromptModule();
 console.log(chalk.cyan.bold(`--- CLI Core Initialisation/Configuration\n`));
 
 prompt(questions)
-  .then(function (answers) {    
+  .then(function(answers) {
     if (answers.name === 'cli-core') {
       console.log(
-        chalk.red.bold(`not writing to files:\n`), 
-        chalk.red(`  your project name is still "${chalk.white.bold('cli-core')}", are you in the right place?`));
-      setDryRun(true);      
+        chalk.red.bold(`not writing to files:\n`),
+        chalk.red(
+          `  your project name is still "${chalk.white.bold(
+            'cli-core'
+          )}", are you in the right place?`
+        )
+      );
+      setDryRun(true);
     }
     pkg.name = answers.name;
     pkg.description = answers.description;
@@ -104,16 +109,16 @@ prompt(questions)
 
     // TODO: update `repository`, `homepage`, and `bugs` keys
     forkUpstreams(pkg.repository.url)
-      .then(function () {
+      .then(function() {
         savePackage(pkg);
       })
-      .catch(function () {
+      .catch(function() {
         console.log('upstream promise rejected', arguments);
-      })
+      });
   })
   .catch(function() {
     console.log('prompt promise rejected', arguments);
-  })
+  });
 
 /**
  *
@@ -122,7 +127,8 @@ prompt(questions)
  */
 
 function savePackage(pkg) {
-  fs.writeJsonFile(paths.scriptPath('package.json'), pkg)
+  fs
+    .writeJsonFile(paths.scriptPath('package.json'), pkg)
     .then(() => {
       console.log('done');
     })
