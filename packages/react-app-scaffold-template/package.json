@@ -1,6 +1,6 @@
 {
   "name": "react-environment-greenfield",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "HeathWallace Australia setup for greenfield exploration of React and design crossover including style guides and other potential integration points",
   "main": "index.js",
   "scripts": {
