@@ -1,6 +1,6 @@
 {
   "name": "react-environment-greenfield",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "HeathWallace Australia setup for greenfield exploration of React and design crossover including style guides and other potential integration points",
   "main": "index.js",
   "scripts": {
@@ -28,6 +28,6 @@
     "path": "^0.12.7",
     "react-hot-loader": "next",
     "webpack": "^2.5.1",
-    "webpack-dev-server": "^2.4.5"    
+    "webpack-dev-server": "^2.4.5"
   }
 }
