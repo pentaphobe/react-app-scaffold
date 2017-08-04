@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --progress --inline",
+    "create-component": "npm explore scappfold-scripts -- npm run create-component",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "gitDir": "../",
