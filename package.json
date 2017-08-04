@@ -1,5 +1,14 @@
 {
-	"devDependencies": {
-		"lerna": "^2.0.0"
-	}
+  "name": "react-app-scaffold",
+  "version": "0.1.0",
+  "bin": {
+    "scappfold_mono": "packages/scappfold/bin/index.js"
+  },
+  "scripts": {
+    "postinstall": "lerna bootstrap"
+  },
+  "description": "base monorepo for scappfold",
+  "devDependencies": {
+    "lerna": "^2.0.0"
+  }
 }
