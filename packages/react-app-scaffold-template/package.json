@@ -1,6 +1,6 @@
 {
   "name": "react-app-scaffold-template",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "description": "minimal template for scappfold development environment",
   "main": "index.js",
   "scripts": {
