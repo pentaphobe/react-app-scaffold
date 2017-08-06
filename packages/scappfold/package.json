@@ -1,6 +1,6 @@
 {
   "name": "scappfold",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "creates a new development environment from a template",
   "bin": {
     "scappfold": "./bin/index.js"
