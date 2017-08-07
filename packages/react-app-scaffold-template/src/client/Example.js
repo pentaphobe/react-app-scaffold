@@ -9,6 +9,7 @@ import styled, {
 import './FontInjection';
 import Screen from 'components/Screen';
 import Header from 'components/Header';
+import Footer from 'components/Footer';
 import Main from 'components/Main';
 import Heading from 'components/Heading';
 import Button from 'components/Button';
@@ -31,6 +32,8 @@ const ExampleBase = (props) => (
       }
       <Input id="testInput" label="Test label" />
     </Main>
+    <Footer>
+    </Footer>
   </Screen>
 );
 

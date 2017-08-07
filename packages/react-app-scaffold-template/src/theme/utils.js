@@ -57,7 +57,37 @@ const mixColor = (a, b, amount) => {
   );
 };
 
-const get = (themeProp) => props => props.theme[themeProp];
+const deepGet = (obj, ids) => {
+  let idList = ids.slice();
+  let current = obj;
+  while (idList.length) {
+    let nextId = idList.shift();
+    if (nextId in current) {
+      current = current[nextId];
+    } else if (nextId in obj) {
+      // allow self referencing
+      current = obj[nextId];
+    } else {
+      console.warn(`failed to find ${nextId} in ${current}. Original context was '${ids}' ${obj}`, current, obj);
+      break;
+    }
+  }
+
+  /**
+   * 
+   * TODO: naive numeric coercions are the devil
+   * 
+   */
+  // if (typeof current === 'string' && current.match(/^(\d+)$/)) {
+  //   current = parseInt(current, 10);
+  // }
+  
+  return current;
+};
+
+const deepGetPath = (obj, path) => deepGet(obj, path.split('/'));
+
+const get = (themeProp) => props => deepGetPath(props.theme, themeProp);
 const darken = (themeProp, amount) => props => mixColor(props.theme[themeProp], '#000', amount);
 const lighten = (themeProp, amount) => props => mixColor(props.theme[themeProp], '#fff', amount);
 

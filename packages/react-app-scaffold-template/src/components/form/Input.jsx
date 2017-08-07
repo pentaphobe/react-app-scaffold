@@ -12,15 +12,25 @@ import {
 const InputWrapper = (props) => (<Section {...props} />);
 
 const InputField = styled.input`
-	background: ${ theme.get('primary') };
-	color: ${ theme.get('base') };
-	border: 2px solid ${ theme.get('base') };	
+	background: ${ theme.get('input/background') };
+	color: ${ theme.get('input/color') };
+	border: ${ theme.get('input/border') };	
+	border-radius: 3px;
+	font-size: 24px;
+	min-width: 238px;
+	padding: ${ theme.get('core/padding') };
+	margin: ${ theme.get('core/margin') };
+	height: 38px;
 `;
 
 const Label = styled.label`
-	background: ${ theme.get('primary') };
-	color: ${ theme.get('base') };
-	border: 2px solid ${ theme.get('base') };	
+	background: ${ theme.get('label/background') };
+	color: ${ theme.get('label/color') };
+	font-size: 24px;
+	padding: ${ theme.get('core/padding') };
+	margin: ${ theme.get('core/margin') };	
+	height: 38px;
+	display: block;
 `;
 
 const InputWithLabelAttribute = (props) => (
