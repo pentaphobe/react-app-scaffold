@@ -21,7 +21,10 @@ function forkUpstreams(newRemote, callback) {
               .addRemote('upstream', origin.refs.fetch);
           });
         }
-        resolve('hello mudda');
+        resolve({
+          origin: origin,
+          newRemote: newRemote
+        });
       }
     });
   });

@@ -2,6 +2,9 @@
  *
  * THIS FILE IS WIP - DO NOT USE
  *
+ * Currently solely an exploration of a more optimised theme interface
+ * with potential convenience / transform functions
+ * 
  ******/
 
 /**
@@ -45,10 +48,10 @@ const mixColor = (a, b, amount) => {
   // console.log(toHex(tupleA.map( (val, idx) => (val * (1-amount)) + (tupleB[idx] * amount) )));
   // REMOVEME:
   // 
-  // Force alpha down a little so we get an rgba() conversion
+  // Bring alpha down a little to force rgba() output
   tupleB[3] = 0.9;
   tupleA[3] = 0.9;
-  // 
+  
   return toHex(
     tupleA.map( (val, idx) => (val * (1-amount)) + (tupleB[idx] * amount) )
   );

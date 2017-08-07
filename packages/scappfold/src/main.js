@@ -8,46 +8,48 @@ const fs = require('./fs');
 const { cwdRelative, cwdPath, scriptRelative, scriptPath } = require('./paths');
 const { isDryRun, setDryRun } = require('./dryRun');
 
-const scappfoldConfigFile = 'scappfold.json';
+const {warning, getCurrentProject } = require('scappfold-scripts/utils');
 
-function warning(message) {
-  let extraArgs = Array.prototype.slice
-    .call(arguments, 1)
-    .map(line => `  ${line}`)
-    .join('\n');
+// const scappfoldConfigFile = 'scappfold.json';
 
-  console.log(chalk.yellow.bold(message));
-  console.log(chalk.yellow(extraArgs));
-}
+// function warning(message) {
+//   let extraArgs = Array.prototype.slice
+//     .call(arguments, 1)
+//     .map(line => `  ${line}`)
+//     .join('\n');
 
-function recurseUp(dir, testFn) {
-  let abs = path.resolve(dir);
+//   console.log(chalk.yellow.bold(message));
+//   console.log(chalk.yellow(extraArgs));
+// }
 
-  if (abs === '' || abs === '/') {
-    return false;
-  }
-  if (testFn(abs)) {
-    return abs;
-  }
-  return recurseUp(path.dirname(abs), testFn);
-}
+// function recurseUp(dir, testFn) {
+//   let abs = path.resolve(dir);
 
-function getCurrentProject(originPath) {
-  let projectPath = recurseUp(path.resolve(originPath), dir =>
-    fs.existsSync(path.join(dir, scappfoldConfigFile))
-  );
+//   if (abs === '' || abs === '/') {
+//     return false;
+//   }
+//   if (testFn(abs)) {
+//     return abs;
+//   }
+//   return recurseUp(path.dirname(abs), testFn);
+// }
 
-  if (!projectPath) {
-    warning(
-      `you don't appear to be in a Scappfold project`,
-      `directory checked was ${path.resolve(originPath)}`
-    );
-    return;
-  }
+// function getCurrentProject(originPath) {
+//   let projectPath = recurseUp(path.resolve(originPath), dir =>
+//     fs.existsSync(path.join(dir, scappfoldConfigFile))
+//   );
 
-  // console.log(chalk.green(`project found at ${path.resolve(projectPath)}...`));
-  return projectPath;
-}
+//   if (!projectPath) {
+//     warning(
+//       `you don't appear to be in a Scappfold project`,
+//       `directory checked was ${path.resolve(originPath)}`
+//     );
+//     return;
+//   }
+
+//   // console.log(chalk.green(`project found at ${path.resolve(projectPath)}...`));
+//   return projectPath;
+// }
 
 ///////// Global configuration and options
 program
