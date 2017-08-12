@@ -17,6 +17,7 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "recompose": "^0.24.0",
+    "scappfold-scripts": "^0.1.4",
     "styled-components": "^2.1.1"
   },
   "devDependencies": {
