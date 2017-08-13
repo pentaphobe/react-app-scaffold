@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import themes, { utils as theme } from '../theme';
+import themes, { utils as theme } from 'theme';
 
 const Footer = styled.header`
   background: ${ theme.get('footer/background') };

@@ -8,12 +8,12 @@ import styled, {
 
 import './FontInjection';
 import Screen from 'components/Screen';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
 import Main from 'components/Main';
-import Heading from 'components/Heading';
-import Button from 'components/Button';
-import Input from 'components/form/Input';
+import Header from 'components/common/Header';
+import Footer from 'components/common/Footer';
+import Heading from 'components/common/Heading';
+import Button from 'components/common/Button';
+import Input from 'components/common/form/Input';
 
 const ExampleBase = (props) => (
   <Screen>

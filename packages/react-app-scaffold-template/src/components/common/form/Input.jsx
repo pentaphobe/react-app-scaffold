@@ -2,8 +2,8 @@ import React from 'react';
 import styled  from 'styled-components';
 import { branch, renderComponent } from 'recompose';
 
-import themes, { utils as theme } from '../../theme';
-import { Section } from 'components/Section';
+import themes, { utils as theme } from 'theme';
+import { Section } from 'components/common/Section';
 import {
   InputWithLabelChildProps,
   InputWithLabelAttributeProps
