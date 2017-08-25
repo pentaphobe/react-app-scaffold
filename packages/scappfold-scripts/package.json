@@ -1,6 +1,6 @@
 {
   "name": "scappfold-scripts",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "shared scripts for scappfold create-app and create-component",
   "main": "index.js",
   "gitDir": "../",

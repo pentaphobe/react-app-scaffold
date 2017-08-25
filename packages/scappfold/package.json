@@ -1,6 +1,6 @@
 {
   "name": "scappfold",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "creates a new development environment from a template",
   "bin": {
     "scappfold": "./bin/index.js"
@@ -37,10 +37,11 @@
     "graceful-fs": "^4.1.11",
     "inquirer": "^3.2.1",
     "progress": "^2.0.0",
-    "react-app-scaffold-template": "^0.1.6",
+    "react-app-scaffold-template": "^0.1.7",
+    "react-app-scaffold-template-isolated": "^0.1.1",
     "recursive-copy": "^2.0.6",
     "recursive-readdir-sync": "^1.0.6",
-    "scappfold-scripts": "^0.1.4",
+    "scappfold-scripts": "^0.1.5",
     "semver": "^5.4.1",
     "simple-git": "^1.75.0",
     "validate-npm-package-name": "^3.0.0",

@@ -1,0 +1,17 @@
+{
+  "name": "react-app-scaffold-template-isolated",
+  "version": "0.1.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm explore react-app-scaffold-template -- npm run start",
+    "create-component": "npm explore scappfold-scripts -- npm run create-component",
+    "test": "npm explore react-app-scaffold-template -- npm test"
+  },
+  "author": "Keilin Olsen (http://github.com/pentaphobe)",
+  "license": "MIT",
+  "dependencies": {
+    "react-app-scaffold-template": "^0.1.7",
+    "scappfold-scripts": "^0.1.5"
+  }
+}
