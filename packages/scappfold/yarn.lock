@@ -812,14 +812,22 @@ pseudomap@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/pseudomap/-/pseudomap-1.0.2.tgz#f052a28da70e618917ef0a8ac34c1ae5a68286b3"
 
-react-app-scaffold-template@:
-  version "0.1.1"
-  resolved "http://localhost:4873/react-app-scaffold-template/-/react-app-scaffold-template-0.1.1.tgz#31781e50050bfeba0373988f751b3311c17e89ca"
+react-app-scaffold-template-isolated@^0.1.0:
+  version "0.1.0"
+  resolved "http://localhost:4873/react-app-scaffold-template-isolated/-/react-app-scaffold-template-isolated-0.1.0.tgz#df8da91da579742113f2fe73af0d80e28a24cdb8"
+  dependencies:
+    react-app-scaffold-template "^0.1.6"
+    scappfold-scripts "^0.1.4"
+
+react-app-scaffold-template@^0.1.6:
+  version "0.1.6"
+  resolved "http://localhost:4873/react-app-scaffold-template/-/react-app-scaffold-template-0.1.6.tgz#dd022cce160429fa057d8e45f57c1b465a6656d5"
   dependencies:
     prop-types "^15.5.10"
     react "^15.5.4"
     react-dom "^15.5.4"
     recompose "^0.24.0"
+    scappfold-scripts "^0.1.4"
     styled-components "^2.1.1"
 
 react-dom@^15.5.4:
@@ -921,9 +929,9 @@ rxjs@^5.0.0-beta.11:
   dependencies:
     symbol-observable "^1.0.1"
 
-scappfold-scripts@^0.1.0:
-  version "0.1.0"
-  resolved "http://localhost:4873/scappfold-scripts/-/scappfold-scripts-0.1.0.tgz#431ca94f07c9f31283dc0ab1d4a5887813df5685"
+scappfold-scripts@^0.1.4:
+  version "0.1.4"
+  resolved "http://localhost:4873/scappfold-scripts/-/scappfold-scripts-0.1.4.tgz#e82fe6d351374c89a7116ab67536505e715d7ac9"
 
 semver@^5.4.1:
   version "5.4.1"
